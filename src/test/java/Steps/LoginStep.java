@@ -27,7 +27,7 @@ public class LoginStep extends BaseUtil {
     @Then("^I should see the userform page$")
     public void iShouldSeeTheUserformPage() throws Throwable {
         // Write code here that turns the phrase above into concrete actions
-        System.out.println("The driver is : " + base.StepInfo);
+       // System.out.println("The driver is : " + base.StepInfo);
         System.out.println("User form page");
     }
 
@@ -35,6 +35,7 @@ public class LoginStep extends BaseUtil {
     public void iNavigateToLoginPage() throws Throwable {
         // Write code here that turns the phrase above into concrete actions
         System.out.println("Login Page");
+        base.Device.navigate().to("http://www.executeautomation.com/demosite/Login.html");
     }
 
     @And("^I click login button$")

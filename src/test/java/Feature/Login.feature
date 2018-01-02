@@ -5,7 +5,6 @@ Feature: LoginFeature
     Given I navigate to login page
     And I enter user email address as Email:anupam.rai
     And I verify the count of my salary digits for rs 1000
-    And I just need to see how it looks for JAVA 8 cucumber
     And I enter following details for login
       | UserName  | Password  |
       | admin     | adminpass |

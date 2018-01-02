@@ -4,6 +4,7 @@ import Base.BaseUtil;
 import cucumber.api.Scenario;
 import cucumber.api.java.After;
 import cucumber.api.java.Before;
+import org.openqa.selenium.firefox.FirefoxDriver;
 
 public class Hook extends BaseUtil {
     private BaseUtil base;
@@ -14,10 +15,12 @@ public class Hook extends BaseUtil {
 
     @Before
     public void InitializeTest() {
-        System.out.println("System redirected to particular URL :MOCK");
+        System.out.println("System redirected to particular URL :Firefox");
 
         //Passing a dummy Webdriver Instance
-        base.StepInfo = "FirefoxDriver";
+//        base.StepInfo = "FirefoxDriver";
+        System.setProperty("webdriver.gecko.driver", "C:\\Learning\\geckodriver.exe");
+        Device = new FirefoxDriver();
     }
 
     @After
