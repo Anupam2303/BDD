@@ -35,7 +35,9 @@ public class LoginStep extends BaseUtil {
     public void iNavigateToLoginPage() throws Throwable {
         // Write code here that turns the phrase above into concrete actions
         System.out.println("Login Page");
-        base.Device.navigate().to("http://www.executeautomation.com/demosite/Login.html");
+        base.driver.navigate().to("http://www.executeautomation.com/demosite/Login.html");
+        wait(2000);
+        base.driver.quit();
     }
 
     @And("^I click login button$")

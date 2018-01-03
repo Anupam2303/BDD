@@ -4,7 +4,8 @@ import Base.BaseUtil;
 import cucumber.api.Scenario;
 import cucumber.api.java.After;
 import cucumber.api.java.Before;
-import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.edge.EdgeDriver;
 
 public class Hook extends BaseUtil {
     private BaseUtil base;
@@ -19,9 +20,9 @@ public class Hook extends BaseUtil {
 
         //Passing a dummy Webdriver Instance
 //        base.StepInfo = "FirefoxDriver";
-        System.setProperty("webdriver.gecko.driver", "C:\\Learning\\geckodriver.exe");
-        Device = new FirefoxDriver();
-    }
+        System.setProperty("webdriver.edge.driver", "C:\\Learning\\MicrosoftWebDriver.exe");
+        WebDriver driver = new EdgeDriver();
+        }
 
     @After
     public void TearDownTest(Scenario scenerio) {
