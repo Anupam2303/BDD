@@ -4,7 +4,10 @@ import Base.BaseUtil;
 import cucumber.api.Scenario;
 import cucumber.api.java.After;
 import cucumber.api.java.Before;
+import org.junit.AfterClass;
+import org.junit.BeforeClass;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 
 public class Hook extends BaseUtil {
@@ -14,19 +17,16 @@ public class Hook extends BaseUtil {
         this.base = base;
     }
 
-    @Before
+//    @Before
     public void InitializeTest() {
-        System.out.println("System redirected to particular URL :Firefox");
+    System.out.println("System redirected to particular URL :Firefox");
+    System.setProperty("webdriver.chrome.driver", "/Personal/Drivers/chromedriver");
+    base.driver = new ChromeDriver();
+    }
 
-        //Passing a dummy Webdriver Instance
-//        base.StepInfo = "FirefoxDriver";
-        System.setProperty("webdriver.edge.driver", "C:\\Learning\\MicrosoftWebDriver.exe");
-        WebDriver driver = new EdgeDriver();
-        }
-
-    @After
+//    @After
     public void TearDownTest(Scenario scenerio) {
-        System.out.println("Closing browser : MOCK");
-        System.out.println(scenerio.getName());
+    System.out.println("Closing browser : MOCK");
+    System.out.println(scenerio.getName());
     }
 }
